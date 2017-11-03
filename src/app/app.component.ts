@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  onSignIn(formSignIn) {
-    console.log(formSignIn.value);
+  formSignIn: FormGroup;
+
+  constructor() {
+    this.formSignIn = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl()
+    });
+  }
+
+  onSignIn() {
+    console.log(this.formSignIn.value);
   }
 }
