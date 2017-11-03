@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class AppComponent {
   formSignIn: FormGroup;
 
-  constructor() {
-    this.formSignIn = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl()
+  constructor(private fb: FormBuilder) {
+    this.formSignIn = this.fb.group({
+      email: 'vanpho01@gmail.com',
+      password: '123'
     });
   }
 
