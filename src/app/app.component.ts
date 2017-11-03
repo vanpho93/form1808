@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  onSignIn(x) {
-    console.log(x);
+  onSignIn(formSignIn) {
+    console.log(formSignIn);
   }
 }

@@ -1,7 +1,11 @@
 <form (submit)="onSignIn(formSignIn);" #formSignIn="ngForm">
-  <input placeholder="Email" ngModel name="email">
+  <input placeholder="Email" ngModel #email="ngModel" name="email" required email>
+  <div *ngIf="email.touched && email?.errors?.required">Email khong duoc de trong</div>
   <br><br>
   <input type="password" placeholder="Password" ngModel name="password">
   <br><br>
-  <button>Sign In</button>
+  <button [disabled]="formSignIn.invalid">Sign In</button>
 </form>
+<code>{{ formSignIn.value | json }}</code>
+<br />
+<code>{{ formSignIn.controls?.email?.errors | json }}</code>
