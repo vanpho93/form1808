@@ -1,4 +1,4 @@
-<form (submit)="onSignIn(formSignIn);" #formSignIn="ngForm">
+<form (ngSubmit)="onSignIn(formSignIn);" #formSignIn="ngForm">
   <input placeholder="Email" ngModel #email="ngModel" name="email" required email>
   <div *ngIf="email.touched && email?.errors?.required">Email khong duoc de trong</div>
   <br><br>

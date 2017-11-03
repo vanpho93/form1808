@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   onSignIn(formSignIn) {
-    console.log(formSignIn);
+    console.log(formSignIn.value);
   }
 }
